@@ -1,8 +1,6 @@
 <?php
 
-require_once __DIR__ . '/models/News.php';
+require_once __DIR__ . '/controllers/NewsController.php';
 
-
-$items = News::getAll();
-
-include __DIR__ . '/views/index.php';
+$controller = new NewsController();
+$controller->actionAll();

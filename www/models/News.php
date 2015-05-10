@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: STAS
- * Date: 10.05.2015
- * Time: 9:25
- */
+
 require_once __DIR__ . '/../classes/DB.php';
 class News {
 
