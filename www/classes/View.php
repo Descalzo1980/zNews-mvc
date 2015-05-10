@@ -12,6 +12,9 @@ class View
 
     public function display($template)
     {
+        foreach($this->data as $key =>$val){
+            $$key = $val;
+        }
        include __DIR__ . '/../views/' . $template;
     }
 } 
