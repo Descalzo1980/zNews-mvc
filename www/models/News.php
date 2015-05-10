@@ -11,9 +11,5 @@ class News
     protected static $table = 'news';
     protected static $class = 'News';
 
-    public static function getOne($id)
-    {
-        $db = new DB();
-        return $db->queryOne('SELECT * FROM news WHERE id=' .$id, 'News');
-    }
+
 } 
