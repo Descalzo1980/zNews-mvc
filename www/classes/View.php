@@ -3,7 +3,7 @@
 
 class View
 {
-    protected $data;
+    protected $data = [];
 
     public function assign($name, $value)
     {
