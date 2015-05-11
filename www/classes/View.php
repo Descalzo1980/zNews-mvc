@@ -5,6 +5,8 @@ class View
 {
     protected $data = [];
 
+    public $items;
+
     public function assign($name, $value)
     {
         $this->data[$name] = $value;
