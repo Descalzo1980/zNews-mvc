@@ -6,10 +6,20 @@ class NewsController
 {
     public function actionAll()
     {
+        $db = new DB();
+        $res = $db->query(
+            'SELECT * FROM news WHERE id=:id',
+            [':id' => 1]);
+        var_dump($res);
+        die;
+//        echo NewsModel::getTable();
+//        die;
+        /*
         $news = News::getAll();
         $view = new View();
         $view->items = $news;
         $view->display('news/all.php');
+        */
     }
 
     public function actionOne()
