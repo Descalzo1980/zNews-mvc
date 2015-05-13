@@ -11,10 +11,16 @@ class NewsController
 //            'SELECT * FROM news WHERE id=:id',
 //            [':id' => 1]);
 
-        var_dump(
-        NewsModel::findAll()
-    );
-        die;
+        $article = new NewsModel();
+        $article->title = 'Я фигею';
+        $article->text = 'Строго не понимаю что я пишу';
+        $article->insert();
+
+
+//        var_dump(
+//        NewsModel::findOneByPk(1)
+//    );
+//        die;
 //        echo NewsModel::getTable();
 //        die;
         /*
