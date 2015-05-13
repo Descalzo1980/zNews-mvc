@@ -12,7 +12,7 @@ class NewsController
 //            [':id' => 1]);
 
         var_dump(
-        NewsModel::findOneByPk(1)
+        NewsModel::findAll()
     );
         die;
 //        echo NewsModel::getTable();
