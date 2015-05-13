@@ -11,7 +11,7 @@ abstract class AbstractModel
         return $db->query($sql);
     }
 
-    public static function findOne($id)
+    public static function findOneByPk($id)
     {
         $sql = 'SELECT * FROM ' .  static::$table . ' WHERE id=:id';
         $db = new DB();
