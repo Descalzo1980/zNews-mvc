@@ -1,7 +1,9 @@
 <?php
 
 
-
+/**
+ * read about phpdoc
+ */
 class NewsController
 {
     public function actionAll()
