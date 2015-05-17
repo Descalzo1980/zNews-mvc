@@ -14,8 +14,8 @@ class NewsController
 //            [':id' => 1]);
 
         $article = new NewsModel();
-        $article->title = 'Я фигею';
-        $article->text = 'Строго не понимаю что я пишу';
+        $article->title = 'Пурум пум пум';
+        $article->text = 'Еще одна проверка';
         $article->insert();
 
 
