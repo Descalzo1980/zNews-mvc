@@ -54,13 +54,12 @@ abstract class AbstractModel
     public function insert()
     {
         $cols = array_keys($this->data);
-        //var_dump($cols);
         $data = [];
         foreach ($cols as $col){
             $data[':' . $col] = $this->data[$col];
         }
-        //var_dump($ins);die;
-         $sql = '
+
+        $sql = '
           INSERT INTO ' . static::$table . '
           (' . implode(', ', $cols). ')
           VALUES
@@ -70,5 +69,27 @@ abstract class AbstractModel
         $db = new DB();
         $db->execute($sql, $data);
         $this->id = $db->lastInsertId();
+    }
+
+    public function update()
+    {
+        $cols = [];
+        $data = [];
+        foreach($this->data as $k => $v){
+            $data[':' . $k] = $v;
+            if ('id' == $k){
+                continue;
+            }
+
+            $cols[] = $k . '=:' . $k;
+    }
+       $sql = '
+            UPDATE ' . static::$table . '
+            SET ' . implode(', ', $cols) . '
+            WHERE id=:id
+        ';
+        $db = new DB();
+        $db->execute($sql, $data);
+
     }
 }

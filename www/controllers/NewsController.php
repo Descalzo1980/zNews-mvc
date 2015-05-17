@@ -8,12 +8,11 @@ class NewsController
 {
     public function actionAll()
     {
-        $art = new NewsModel();
-        $art->title = 'Сегодня в мире';
-        $art->text = 'Всё спокойно';
-        $art->insert();
+        $art = NewsModel::findOneByColumn('title', 'Проверка');
+        $art->title = 'Новый заголовок';
+        $art->text = 'Работает ли?';
+        $art->update();
 
-        var_dump( $art->id );
 
     }
 }
