@@ -62,12 +62,13 @@ abstract class AbstractModel
         //var_dump($ins);die;
          $sql = '
           INSERT INTO ' . static::$table . '
-          (' . implode(', ', $cols).')
+          (' . implode(', ', $cols). ')
           VALUES
-           (' . implode(', ', array_keys($data)).')
+           (' . implode(', ', array_keys($data)). ')
         ';
 
         $db = new DB();
         $db->execute($sql, $data);
+        $this->id = $db->lastInsertId();
     }
 }
