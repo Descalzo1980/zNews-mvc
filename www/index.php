@@ -13,8 +13,10 @@ try {
     $controller = new $controllerClassName();
     $method = 'action' . $act;
     $controller->$method();
+
 } catch (Exception $e ){
+    $view = new View();
+    $view->error = $e->getMessage();
+    $view->display('error.php');
     die('Что то пошло не так: ' . $e->getMessage());
 }
-
-$controller->$method();
