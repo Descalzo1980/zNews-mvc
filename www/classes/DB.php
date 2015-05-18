@@ -28,7 +28,7 @@ class DB
         return $sth->execute($param);
     }
 
-    public function lastInsertId ()
+    public function lastInsertId()
     {
         return $this->dbh->lastInsertId();
     }
