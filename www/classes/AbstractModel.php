@@ -51,7 +51,7 @@ abstract class AbstractModel
         return false;
 
     }
-    public function insert()
+    protected function insert()
     {
         $cols = array_keys($this->data);
         $data = [];
@@ -71,7 +71,7 @@ abstract class AbstractModel
         $this->id = $db->lastInsertId();
     }
 
-    public function update()
+    protected function update()
     {
         $cols = [];
         $data = [];
@@ -80,7 +80,6 @@ abstract class AbstractModel
             if ('id' == $k){
                 continue;
             }
-
             $cols[] = $k . '=:' . $k;
     }
        $sql = '
@@ -91,5 +90,14 @@ abstract class AbstractModel
         $db = new DB();
         $db->execute($sql, $data);
 
+    }
+
+    public function save()
+    {
+        if(!isset($this->id)){
+            $this->insert();
+        }else{
+            $this->update();
+        }
     }
 }
