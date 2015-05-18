@@ -14,7 +14,7 @@ try {
     $method = 'action' . $act;
     $controller->$method();
 } catch (Exception $e ){
-    die('Что то пошло не так:' . $e->getMessage());
+    die('Что то пошло не так: ' . $e->getMessage());
 }
 
 $controller->$method();
