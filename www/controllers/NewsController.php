@@ -8,8 +8,12 @@ class NewsController
 {
     public function actionAll()
     {
-        $art = NewsModel::findOneByColumn('title', 'Новый заголовок ');
-        $art->title = 'Новый заголовок 123';
-        $art->save();
+        try{
+            $art = NewsModel::findOneByColumn('title', 'Новый заголовок 123');
+        } catch (ModelException $e){
+            die('Что то пошло не так');
+        }
+
+
     }
 }
