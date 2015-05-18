@@ -46,8 +46,7 @@ abstract class AbstractModel
         $sql = 'SELECT * FROM ' .  static::$table . ' WHERE ' . $column . '=:value';
         $res =  $db->query($sql, [':value' => $value]);
         if (empty($res)){
-            $e = new ModelException();
-            throw $e;
+            throw new ModelException();
         }
 
         return false;

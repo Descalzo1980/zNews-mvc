@@ -10,4 +10,11 @@ $controllerClassName = $ctrl . 'Controller';
 $controller = new $controllerClassName();
 
 $method = 'action' . $act;
+try {
+
+    $controller->$method();
+}catch (Exception $e ){
+    die('Что то пошло не так');
+}
+
 $controller->$method();
