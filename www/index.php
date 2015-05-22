@@ -1,5 +1,8 @@
 <?php
 
+var_dump($_SERVER['REQUEST_URI']);
+var_dump($_GET);
+die;
 require_once __DIR__ . '/autoload.php';
 
 echo $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
