@@ -1,11 +1,13 @@
 <?php
 
-var_dump($_SERVER['REQUEST_URI']);
-var_dump($_GET);
-die;
+//var_dump($_SERVER['REQUEST_URI']);
+//var_dump($_GET);
+//die;
 require_once __DIR__ . '/autoload.php';
 
-echo $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$pathParts = explode('/', $path);
+var_dump($pathParts);
 die;
 
 $ctrl = isset($_GET['ctrl']) ? $_GET['ctrl'] : 'News';
