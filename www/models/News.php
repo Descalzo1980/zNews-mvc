@@ -8,7 +8,7 @@ namespace Application\Models;
  * @property $text
  */
 class News
-    extends AbstractModel
+    extends \AbstractModel
 {
     protected static $table = 'news';
 

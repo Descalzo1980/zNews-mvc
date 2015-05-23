@@ -1,14 +1,12 @@
 <?php
 
+use Application\Models\News;
 
-/**
- * read about phpdoc
- */
 class NewsController
 {
     public function actionAll()
     {
-        $news = NewsModel::findAll();
+        $news = News::findAll();
         $view = new View();
         $view->items = $news;
         $view->display('news/all.php');
@@ -17,7 +15,7 @@ class NewsController
     public function actionOne()
     {
         $id = $_GET['id'];
-        $item = NewsModel::getOne($id);
+        $item = News::getOne($id);
         $view = new View;
         $view->assign('item', $item);
         $view->display('news/one.php');
