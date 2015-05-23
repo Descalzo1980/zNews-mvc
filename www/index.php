@@ -1,12 +1,17 @@
 <?php
 
-$content = file_get_contents(__DIR__ . '/test.json');
-$obj = json_decode($content);
-echo $obj->foo;
-die;
+//$content = file_get_contents(__DIR__ . '/test.json');
+//$obj = json_decode($content);
+//echo $obj->foo;
+//die;
 //var_dump($_SERVER['REQUEST_URI']);
 //var_dump($_GET);
-//die;
+$obj = new stdClass();
+$obj->title = 'War ond peace';
+$obj->text = 'Long long text';
+echo json_encode($obj);
+
+die;
 require_once __DIR__ . '/autoload.php';
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
