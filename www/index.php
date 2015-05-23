@@ -6,8 +6,9 @@
 //die;
 //var_dump($_SERVER['REQUEST_URI']);
 //var_dump($_GET);
+
 $obj = new stdClass();
-$obj->title = 'War ond peace';
+$obj->title = 'Война и мир';
 $obj->text = 'Long long text';
 echo json_encode($obj);
 
