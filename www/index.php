@@ -14,7 +14,7 @@ $ctrl = !empty($pathParts[3]) ? ucfirst($pathParts[3]) : 'News';
 $act = !empty($pathParts[4]) ? ucfirst($pathParts[4]) : 'All';
 
 
-$controllerClassName = $ctrl . 'Controller';
+$controllerClassName = 'Application\\Controllers\\' . $ctrl;
 
 
 
