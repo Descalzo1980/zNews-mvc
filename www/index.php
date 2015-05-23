@@ -1,10 +1,8 @@
 <?php
 
 $content = file_get_contents(__DIR__ . '/test.json');
-var_dump(
-    json_decode($content)
-
-);
+$obj = json_decode($content);
+echo $obj->foo;
 die;
 //var_dump($_SERVER['REQUEST_URI']);
 //var_dump($_GET);
